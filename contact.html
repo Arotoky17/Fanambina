@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Association Fanambina</title>
+  <meta name="description" content="Contactez l'Association Fanambina : Esokaka Fort Dauphin, Bevalala Andoharanofotsy. Téléphone et email.">
+  <meta name="keywords" content="contact Fanambina, Madagascar, Fort Dauphin, Andoharanofotsy">
+  <meta property="og:title" content="Contact - Association Fanambina">
+  <meta property="og:description" content="Contactez-nous pour nos actions d'agence payeur, ciblage et prestataire de service.">
+  <meta name="theme-color" content="#1a5f2a">
+
+  <link rel="icon" type="image/png" href="images/Logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .contact-card { background: #fff; border-radius: var(--card-radius); padding: 2rem; box-shadow: var(--card-shadow); height: 100%; transition: var(--transition); border: 1px solid rgba(0,0,0,0.06); }
+    .contact-card:hover { box-shadow: var(--card-shadow-hover); }
+    .contact-card .contact-icon { width: 56px; height: 56px; border-radius: 12px; background: linear-gradient(135deg, rgba(26, 95, 42, 0.12) 0%, rgba(76, 175, 80, 0.12) 100%); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem; }
+    .contact-form-card { background: #fff; border-radius: var(--card-radius); padding: 2rem; box-shadow: var(--card-shadow); border: 1px solid rgba(0,0,0,0.06); }
+    body.dark-mode .contact-card, body.dark-mode .contact-form-card { background: #252525; border-color: #333; }
+  </style>
+</head>
+<body>
+  <button id="backToTop" class="btn-back-top" aria-label="Retour en haut" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+  <button class="btn-dark-mode" id="darkModeToggle" aria-label="Mode sombre" title="Mode sombre">
+    <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+  </button>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-fanambina">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/Logo.png" alt="Logo Fanambina" loading="lazy">
+        <span>Association Fanambina</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="objectif.html">Objectif</a></li>
+          <li class="nav-item"><a class="nav-link" href="agence.html">Agence payeur</a></li>
+          <li class="nav-item"><a class="nav-link" href="ciblage.html">Ciblage</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Prestataire de service</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <p class="section-label reveal" style="color: rgba(255,255,255,0.9);">Échangeons</p>
+      <h1 class="page-title reveal">Contact</h1>
+      <p class="page-subtitle reveal">Pour toute question sur nos actions : agence payeur, ciblage ou prestataire de service.</p>
+    </div>
+  </header>
+
+  <section class="section-fanambina" aria-label="Coordonnées">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="contact-card reveal text-center">
+            <div class="contact-icon mx-auto"><i class="fas fa-map-marker-alt"></i></div>
+            <h3 class="h5 mb-2">Adresses</h3>
+            <p class="mb-0 text-muted">Esokaka Fort Dauphin<br>Bevalala Andoharanofotsy</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-card reveal text-center">
+            <div class="contact-icon mx-auto"><i class="fas fa-phone-alt"></i></div>
+            <h3 class="h5 mb-2">Téléphone</h3>
+            <p class="mb-0"><a href="tel:0348470940">034 84 70 940</a><br><a href="tel:0329938341">032 99 38 341</a></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-card reveal text-center">
+            <div class="contact-icon mx-auto"><i class="fas fa-envelope"></i></div>
+            <h3 class="h5 mb-2">Email</h3>
+            <p class="mb-0"><a href="mailto:Association.Fanambina@gmail.com">association.fanambina@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <div class="contact-form-card reveal">
+            <h2 class="section-title mb-4">Envoyez-nous un message</h2>
+            <form id="contactForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Votre nom</label>
+                  <input type="text" class="form-control" id="name" placeholder="Votre nom" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Votre email</label>
+                  <input type="email" class="form-control" id="email" placeholder="votre@email.com" required>
+                </div>
+                <div class="col-12">
+                  <label for="subject" class="form-label">Sujet</label>
+                  <input type="text" class="form-control" id="subject" placeholder="Agence payeur / Ciblage / Prestataire de service">
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" rows="5" placeholder="Votre message..." required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-hero">Ouvrir mon logiciel de messagerie</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-fanambina">
+    <div class="container">
+      <p class="mb-0">&copy; Association Fanambina. Agir juste, cibler mieux — Servir vrai à l'humanité.</p>
+      <p class="mb-0 mt-2"><a href="index.html">Accueil</a> · <a href="objectif.html">Objectif</a></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function(){
+      var r = document.querySelectorAll('.reveal');
+      var o = new IntersectionObserver(function(e){ e.forEach(function(x){ if(x.isIntersecting) x.target.classList.add('revealed'); }); }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+      r.forEach(function(el){ o.observe(el); });
+      var form = document.getElementById('contactForm');
+      if (form) form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var subj = encodeURIComponent(document.getElementById('subject').value || 'Contact Association Fanambina');
+        var body = encodeURIComponent('Nom: ' + (document.getElementById('name').value || '') + '\nEmail: ' + (document.getElementById('email').value || '') + '\n\n' + (document.getElementById('message').value || ''));
+        window.location.href = 'mailto:Association.Fanambina@gmail.com?subject=' + subj + '&body=' + body;
+      });
+    })();
+  </script>
+</body>
+</html>

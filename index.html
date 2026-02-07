@@ -2,740 +2,128 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" /> 
-  <title>Association Fanambina</title>
-  <meta name="description" content="Association Fanambina : Agence payeur, consultance, ciblage, accompagnement professionnel et soutien communautaire à Madagascar.">
-  <meta name="keywords" content="association, fanambina, agence payeur, consultance, ciblage, Madagascar, accompagnement, communauté">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Association Fanambina — Agence payeur, Ciblage, Prestataire de service</title>
+  <meta name="description" content="Association Fanambina à Madagascar : agence payeur pour campagnes et fonds, ciblage des personnes fragiles, prestataire de services. Agir juste, cibler mieux.">
+  <meta name="keywords" content="association Fanambina, agence payeur, ciblage, prestataire service, Madagascar, aide, financement, personnes fragiles">
   <meta property="og:title" content="Association Fanambina">
   <meta property="og:description" content="Agir juste, cibler mieux — Servir vrai à l'humanité.">
   <meta property="og:image" content="./images/logo-removebg-preview.png">
   <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1a5f2a">
 
-  <!-- Bootstrap CSS -->
+  <link rel="icon" type="image/png" href="./images/Logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Animate.css -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
-  <style>
-    :root{
-      --accent:#2d7a2d;
-      --secondary:#4CAF50;
-      --card-radius:12px;
-      --card-shadow: 0 6px 25px rgba(0,0,0,0.12);
-    }
-
-    html { scroll-behavior: smooth; }
-    body { 
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; 
-      color:#222; 
-      overflow-x: hidden;
-    }
-
-    /* ---------- NAVBAR ---------- */
-    .navbar-brand img { width:44px; height:44px; object-fit:cover; border-radius:50%; }
-    .navbar .nav-link { color: #f8f9fa; }
-    .navbar .nav-link:hover{ color: #d1eede; }
-
-    /* ---------- HERO MODERNE ---------- */
-    .modern-hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #f8fff8 0%, #e8f5e8 50%, #ffffff 100%);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      padding: 80px 0 40px;
-    }
-
-    /* Éléments décoratifs animés */
-    .floating-shapes {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-    }
-
-    .shape {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.6;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .shape-1 {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(45deg, #81C784, #4CAF50);
-      top: 15%;
-      left: 10%;
-      animation-delay: 0s;
-    }
-
-    .shape-2 {
-      width: 120px;
-      height: 120px;
-      background: linear-gradient(45deg, #A5D6A7, #66BB6A);
-      top: 60%;
-      left: 5%;
-      animation-delay: 2s;
-    }
-
-    .shape-3 {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(45deg, #C8E6C9, #81C784);
-      top: 30%;
-      right: 20%;
-      animation-delay: 4s;
-    }
-
-    .shape-4 {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(45deg, #E8F5E8, #A5D6A7);
-      top: 70%;
-      right: 10%;
-      animation-delay: 1s;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-20px) rotate(180deg); }
-    }
-
-    /* Contenu du hero */
-    .hero-content {
-      z-index: 2;
-      position: relative;
-      position: center;
-    }
-
-    .hero-logo {
-      width: 300px;
-      height: 300px;
-      border-radius: 0%;
-      margin-bottom: 20px;
-      /* margin-left: 50px; */
-    }
-
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: 900;
-      color: var(--accent);
-      margin-bottom: 20px;
-      line-height: 1.1;
-      text-shadow: 0 2px 10px rgba(45, 122, 45, 0.1);
-    }
-
-    .hero-subtitle {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #333;
-      margin-bottom: 15px;
-      letter-spacing: 0.5px;
-    }
-
-    .hero-tagline {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 30px;
-      font-style: italic;
-    }
-
-    .cta-button {
-      background: linear-gradient(45deg, var(--accent), var(--secondary));
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 50px;
-      color: white;
-      text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 20px rgba(45, 122, 45, 0.3);
-      animation: pulse 2s infinite;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(45, 122, 45, 0.4);
-      color: white;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 5px 20px rgba(45, 122, 45, 0.3); }
-      50% { box-shadow: 0 5px 25px rgba(45, 122, 45, 0.5); }
-      100% { box-shadow: 0 5px 20px rgba(45, 122, 45, 0.3); }
-    }
-
-    /* Image du hero */
-    .hero-image-container {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-showcase {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 30px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-      transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
-      transition: transform 0.6s ease;
-      position: relative;
-    }
-
-    .hero-showcase:hover {
-      transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(-10px);
-    }
-
-    .hero-showcase::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(45deg, var(--accent), var(--secondary), #81C784, var(--accent));
-      border-radius: 32px;
-      z-index: -1;
-      opacity: 0.7;
-      animation: borderGlow 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes borderGlow {
-      0% { opacity: 0.5; }
-      100% { opacity: 0.9; }
-    }
-
-    .hero-showcase img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      .hero-title {
-        font-size: 2.8rem;
-      }
-      .hero-showcase {
-        max-width: 500px;
-        margin: 40px auto 0;
-      }
-      .modern-hero {
-        text-align: center;
-        min-height: auto;
-        padding: 60px 0;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.2rem;
-      }
-      .hero-subtitle {
-        font-size: 1.2rem;
-      }
-      .hero-showcase img {
-        height: 300px;
-      }
-      .shape {
-        opacity: 0.3;
-      }
-    }
-
-    /* ---------- SECTIONS MODERNES ---------- */
-    
-    /* Section générale */
-    .modern-section {
-      position: relative;
-      padding: 80px 0;
-      overflow: hidden;
-    }
-
-    .modern-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(76, 175, 80, 0.02) 0%, rgba(129, 199, 132, 0.03) 50%, rgba(200, 230, 201, 0.02) 100%);
-      pointer-events: none;
-    }
-
-    .modern-section.alt-bg {
-      background: linear-gradient(135deg, #f8fff8 0%, #ffffff 100%);
-    }
-
-    /* Titres de sections */
-    .section-title {
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: var(--accent);
-      text-align: center;
-      margin-bottom: 20px;
-      position: relative;
-      text-shadow: 0 2px 10px rgba(45, 122, 45, 0.1);
-    }
-
-    .section-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: linear-gradient(45deg, var(--accent), var(--secondary));
-      border-radius: 2px;
-      animation: titleGlow 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes titleGlow {
-      0% { box-shadow: 0 0 10px rgba(45, 122, 45, 0.3); }
-      100% { box-shadow: 0 0 20px rgba(76, 175, 80, 0.5); }
-    }
-
-    .section-subtitle {
-      font-size: 1.2rem;
-      color: #555;
-      text-align: center;
-      margin-bottom: 50px;
-      font-weight: 500;
-    }
-
-    /* Cards modernes */
-    .modern-card {
-      border: none;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #fff;
-      position: relative;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-    }
-
-    .modern-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, var(--accent), var(--secondary));
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      border-radius: 20px;
-      z-index: 1;
-    }
-
-    .modern-card:hover::before {
-      opacity: 0.1;
-    }
-
-    .modern-card:hover {
-      transform: translateY(-15px) scale(1.03);
-      box-shadow: 0 20px 60px rgba(45, 122, 45, 0.25);
-    }
-
-    .media-wrap {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
-      position: relative;
-      z-index: 2;
-    }
-
-    .media-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease;
-      filter: brightness(1) saturate(1.1);
-    }
-
-    .modern-card:hover .media-wrap img {
-      transform: scale(1.1);
-      filter: brightness(1.1) saturate(1.2);
-    }
-
-    .modern-card-body {
-      padding: 20px;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-      background: #fff;
-    }
-
-    .modern-caption {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin: 0;
-      transition: color 0.3s ease;
-    }
-
-    .modern-card:hover .modern-caption {
-      color: var(--secondary);
-    }
-
-    /* Section avec formes décoratives */
-    .decorated-section {
-      position: relative;
-    }
-
-    .section-shapes {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .section-shape {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.4;
-      animation: sectionFloat 8s ease-in-out infinite;
-    }
-
-    .section-shape-1 {
-      width: 100px;
-      height: 100px;
-      background: linear-gradient(45deg, rgba(76, 175, 80, 0.3), rgba(129, 199, 132, 0.3));
-      top: 10%;
-      left: 5%;
-      animation-delay: 0s;
-    }
-
-    .section-shape-2 {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(45deg, rgba(129, 199, 132, 0.3), rgba(165, 214, 167, 0.3));
-      top: 70%;
-      right: 10%;
-      animation-delay: 3s;
-    }
-
-    .section-shape-3 {
-      width: 80px;
-      height: 80px;
-      background: linear-gradient(45deg, rgba(165, 214, 167, 0.3), rgba(200, 230, 201, 0.3));
-      top: 40%;
-      right: 5%;
-      animation-delay: 6s;
-    }
-
-    @keyframes sectionFloat {
-      0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
-      50% { transform: translateY(-30px) rotate(180deg); opacity: 0.6; }
-    }
-
-    /* Notes de section */
-    .modern-section-note {
-      text-align: center;
-      font-style: italic;
-      color: #666;
-      margin-top: 40px;
-      font-size: 1.1rem;
-      font-weight: 500;
-      position: relative;
-      padding: 20px;
-      background: linear-gradient(135deg, rgba(248, 255, 248, 0.8) 0%, rgba(255, 255, 255, 0.9) 100%);
-      border-radius: 15px;
-      border-left: 4px solid var(--secondary);
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
-
-    /* Contact section moderne */
-    .modern-contact {
-      background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
-      color: white;
-      padding: 60px 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .modern-contact::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-      animation: contactGlow 10s linear infinite;
-    }
-
-    @keyframes contactGlow {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .contact-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .contact-title {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 30px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-
-    .contact-info {
-      font-size: 1.3rem;
-      font-weight: 500;
-    }
-
-    .contact-info a {
-      color: #E8F5E8;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .contact-info a:hover {
-      color: white;
-      text-decoration: underline;
-    }
-
-    /* Footer moderne */
-    .modern-footer {
-      background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-      color: #eee;
-      padding: 40px 0;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .modern-footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--secondary), var(--accent));
-    }
-
-    .modern-footer a {
-      color: #79e0a5;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .modern-footer a:hover {
-      color: var(--secondary);
-      text-decoration: underline;
-    }
-
-    /* Animations */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 1s cubic-bezier(.2,.9,.2,1);
-    }
-
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .fade-in-left {
-      opacity: 0;
-      transform: translateX(-50px);
-      transition: all 1s cubic-bezier(.2,.9,.2,1);
-    }
-
-    .fade-in-left.show {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .fade-in-right {
-      opacity: 0;
-      transform: translateX(50px);
-      transition: all 1s cubic-bezier(.2,.9,.2,1);
-    }
-
-    .fade-in-right.show {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    /* Bouton retour en haut */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 999;
-      display: none;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      font-size: 1.8rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    #backToTop:hover {
-      background: var(--secondary);
-    }
-    /* Dark mode */
-    body.dark-mode {
-      background: #181818;
-      color: #e0e0e0;
-    }
-    body.dark-mode .modern-section,
-    body.dark-mode .modern-section.alt-bg {
-      background: #232323 !important;
-    }
-    body.dark-mode .modern-card,
-    body.dark-mode .modern-card-body {
-      background: #222 !important;
-      color: #e0e0e0;
-    }
-    body.dark-mode .modern-section-note {
-      background: #222 !important;
-      color: #bbb;
-      border-left-color: var(--accent);
-    }
-    body.dark-mode .modern-footer {
-      background: linear-gradient(135deg, #111 0%, #222 100%) !important;
-      color: #eee;
-    }
-    body.dark-mode .modern-contact {
-      background: linear-gradient(135deg, #222 0%, #2d7a2d 100%) !important;
-      color: #fff;
-    }
-    .dark-mode-toggle {
-      position: fixed;
-      bottom: 100px;
-      right: 30px;
-      z-index: 999;
-      background: #fff;
-      color: var(--accent);
-      border: 2px solid var(--accent);
-      border-radius: 50%;
-      width: 48px;
-      height: 48px;
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      transition: background 0.3s, color 0.3s;
-    }
-    .dark-mode .dark-mode-toggle {
-      background: var(--accent);
-      color: #fff;
-      border-color: #fff;
-    }
-    /* Responsive */
-    @media (max-width: 768px) {
-      .section-title {
-        font-size: 2.2rem;
-      }
-      .modern-section {
-        padding: 60px 0;
-      }
-      .section-shapes {
-        opacity: 0.5;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Bouton retour en haut -->
-  <button id="backToTop" aria-label="Retour en haut" title="Retour en haut">↑</button>
-  <!-- Bouton dark mode -->
-  <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Activer/désactiver le mode sombre" title="Mode sombre">🌙</button>
+  <button id="backToTop" class="btn-back-top" aria-label="Retour en haut" title="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <button class="btn-dark-mode" id="darkModeToggle" aria-label="Mode sombre" title="Mode sombre">
+    <i class="fas fa-moon"></i>
+    <i class="fas fa-sun"></i>
+  </button>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm" role="navigation" aria-label="Menu principal">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-fanambina">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#accueil">
-        <img src="./images/Logo.png" alt="Logo de l'association Fanambina" loading="lazy">
-        <span class="ms-2 fw-bold">Association Fanambina</span>
+      <a class="navbar-brand" href="index.html">
+        <img src="./images/Logo.png" alt="Logo Association Fanambina" loading="lazy">
+        <span>Association Fanambina</span>
       </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Menu">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="#objectif">Objectif</a></li>
-          <li class="nav-item"><a class="nav-link" href="#prestataire">Prestataire</a></li>
-          <li class="nav-item"><a class="nav-link" href="#agence">Agence</a></li>
-          <li class="nav-item"><a class="nav-link" href="#ciblage">Ciblage</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="objectif.html">Objectif</a></li>
+          <li class="nav-item"><a class="nav-link" href="agence.html">Agence payeur</a></li>
+          <li class="nav-item"><a class="nav-link" href="ciblage.html">Ciblage</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Prestataire de service</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HERO MODERNE -->
-  <section id="accueil" class="modern-hero" aria-label="Section accueil">
-    <!-- Formes flottantes décoratives -->
+  <header class="hero-fanambina" id="accueil">
+    <div class="hero-bg-slider" aria-hidden="true">
+      <div class="hero-bg-slide" style="background-image: url('./images/ca.jpg');"></div>
+      <div class="hero-bg-slide" style="background-image: url('./images/ce.jpg');"></div>
+      <div class="hero-bg-slide" style="background-image: url('./images/Ps9.jpg');"></div>
+      <div class="hero-bg-slide" style="background-image: url('./images/psf.jpg');"></div>
+      <div class="hero-bg-slide" style="background-image: url('./images/psa.jpg');"></div>
+    </div>
+    <div class="hero-bg-overlay" aria-hidden="true"></div>
     <div class="floating-shapes">
       <div class="shape shape-1"></div>
       <div class="shape shape-2"></div>
       <div class="shape shape-3"></div>
       <div class="shape shape-4"></div>
     </div>
-
     <div class="container">
-      <div class="row align-items-center">
-        <!-- Contenu texte à gauche -->
-        <div class="col-lg-6 hero-content">
-          <img src="./images/logo-removebg-preview.png" alt="Logo principal Fanambina" class="hero-logo animate__animated animate__fadeInDown" loading="lazy">
-          <h1 class="hero-title animate__animated animate__fadeInLeft">
-            Association<br>
-            <span style="color: var(--secondary);">Fanambina</span>
-          </h1>
-          <div class="hero-subtitle animate__animated animate__fadeInLeft animate__delay-1s">
-            Agence payeur – Consultance – Ciblage
-          </div>
-          <div class="hero-tagline animate__animated animate__fadeInLeft animate__delay-2s">
-            Agir juste, cibler mieux · Servir vrai à l'humanité
-          </div>
-          <a href="#objectif" class="cta-button animate__animated animate__fadeInUp animate__delay-3s">
-            Découvrir nos services
-          </a>
+      <div class="hero-content">
+        <img src="./images/logo-removebg-preview.png" alt="Logo Fanambina" class="hero-logo" loading="lazy">
+        <h1 class="hero-title">Association Fanambina</h1>
+        <p class="hero-tagline">Agir juste, cibler mieux — Servir vrai à l'humanité.</p>
+        <p class="hero-tagline" style="font-size: 1rem; opacity: 0.85;">Agence payeur · Ciblage · Prestataire de service</p>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <a href="#actions" class="btn-hero">Découvrir nos actions</a>
+          <a href="contact.html" class="btn-hero btn-hero-outline">Nous contacter</a>
         </div>
+      </div>
+    </div>
+  </header>
 
-        <!-- Image à droite -->
-        <div class="col-lg-6 hero-image-container">
-          <div class="hero-showcase animate__animated animate__fadeInRight animate__delay-1s">
-            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false" data-bs-touch="true" aria-label="Galerie d'images Association Fanambina">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="./images/ca.jpg" class="d-block w-100" alt="Photo de ciblage 1" loading="lazy">
-                </div>
-                <div class="carousel-item">
-                  <img src="./images/ce.jpg" class="d-block w-100" alt="Photo de ciblage 2" loading="lazy">
-                </div>
-                <div class="carousel-item">
-                  <img src="./images/Ps9.jpg" class="d-block w-100" alt="Photo de projet local" loading="lazy">
-                </div>
-                <div class="carousel-item">
-                  <img src="./images/psf.jpg" class="d-block w-100" alt="Photo de ciblage 4" loading="lazy">
-                </div>
+  <section id="actions" class="section-fanambina" aria-label="Nos actions">
+    <div class="container">
+      <p class="section-label text-center reveal">Nos actions</p>
+      <h2 class="section-title text-center reveal">Trois piliers au service des communautés</h2>
+      <p class="section-subtitle text-center reveal">
+        Nous intervenons en tant qu’agence payeur pour les financements et campagnes, nous ciblons les personnes fragiles ou en difficulté qui méritent une aide, et nous proposons des prestations de service sur le terrain.
+      </p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="pillar-card reveal reveal-delay-1">
+            <div class="p-4">
+              <div class="pillar-icon-wrap">
+                <i class="fas fa-hand-holding-usd"></i>
               </div>
+              <h3 class="pillar-title">Agence payeur</h3>
+              <p class="pillar-desc">
+                Lorsqu’il y a des actions de financement — campagnes, fonds, subventions — nous assurons la gestion et la distribution des paiements en toute transparence et fiabilité pour les bénéficiaires et les partenaires.
+              </p>
+              <a href="agence.html" class="pillar-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="pillar-card reveal reveal-delay-2">
+            <div class="p-4">
+              <div class="pillar-icon-wrap">
+                <i class="fas fa-heart"></i>
+              </div>
+              <h3 class="pillar-title">Ciblage</h3>
+              <p class="pillar-desc">
+                Nous ciblons les personnes fragiles ou qui traversent des difficultés et qui méritent d’être aidées : identification, sélection équitable et accompagnement personnalisé pour un impact durable.
+              </p>
+              <a href="ciblage.html" class="pillar-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="pillar-card reveal reveal-delay-3">
+            <div class="p-4">
+              <div class="pillar-icon-wrap">
+                <i class="fas fa-users-cog"></i>
+              </div>
+              <h3 class="pillar-title">Prestataire de service</h3>
+              <p class="pillar-desc">
+                Nous offrons des services d’accompagnement professionnel, de formation, de renforcement des capacités et de soutien communautaire pour accompagner les populations vers l’autonomie.
+              </p>
+              <a href="services.html" class="pillar-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -743,254 +131,108 @@
     </div>
   </section>
 
-  <!-- OBJECTIF -->
-  <section id="objectif" class="modern-section" aria-label="Objectif de l'association">
+  <section id="objectif" class="section-fanambina alt-bg" aria-label="Objectif">
     <div class="container">
-      <h2 class="section-title fade-in">Notre Objectif</h2>
-      <p class="section-subtitle fade-in">Agir juste, cibler mieux — Servir vrai à l'humanité.</p>
+      <p class="section-label text-center reveal">Notre raison d’être</p>
+      <h2 class="section-title text-center reveal">Objectif</h2>
+      <div class="objectif-block reveal">
+        <p class="section-title mb-3">Agir juste, cibler mieux — Servir vrai à l'humanité.</p>
+        <p>
+          L’Association Fanambina s’engage à agir avec équité, à cibler avec précision les personnes et les projets qui ont le plus besoin d’un soutien, et à servir avec sincérité les communautés à Madagascar.
+        </p>
+        <a href="objectif.html" class="btn-hero mt-4" style="background: rgba(255,255,255,0.2); color: white; border-color: white;">Notre objectif en détail</a>
+      </div>
     </div>
   </section>
 
-  <!-- PRESTATAIRE -->
-  <section id="prestataire" class="modern-section decorated-section alt-bg" aria-label="Prestataire de service">
-    <div class="section-shapes">
-      <div class="section-shape section-shape-1"></div>
-      <div class="section-shape section-shape-2"></div>
-      <div class="section-shape section-shape-3"></div>
-    </div>
-    
+  <section class="section-fanambina" aria-label="Galerie">
     <div class="container">
-      <h3 class="section-title fade-in">Prestataire de service</h3>
+      <p class="section-label text-center reveal">En images</p>
+      <h2 class="section-title text-center reveal">Nos actions sur le terrain</h2>
       <div class="row g-4">
-        <div class="col-6 col-md-4 fade-in-left">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/psa.jpg" alt="Accompagnement professionnel" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Accompagnement professionnel</p></div>
+        <div class="col-6 col-md-3">
+          <div class="content-card reveal reveal-delay-1">
+            <div class="ratio ratio-4x3 rounded overflow-hidden">
+              <img src="./images/ca.jpg" alt="Ciblage et accompagnement" class="w-100 h-100 object-fit-cover" loading="lazy">
+            </div>
           </div>
         </div>
-        <div class="col-6 col-md-4 fade-in">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/psb.jpg" alt="Formation et renforcement" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Formation & renforcement</p></div>
+        <div class="col-6 col-md-3">
+          <div class="content-card reveal reveal-delay-2">
+            <div class="ratio ratio-4x3 rounded overflow-hidden">
+              <img src="./images/ce.jpg" alt="Terrain Fanambina" class="w-100 h-100 object-fit-cover" loading="lazy">
+            </div>
           </div>
         </div>
-        <div class="col-6 col-md-4 fade-in-right">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/psc.jpg" alt="Services adaptés" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Services adaptés</p></div>
+        <div class="col-6 col-md-3">
+          <div class="content-card reveal reveal-delay-3">
+            <div class="ratio ratio-4x3 rounded overflow-hidden">
+              <img src="./images/Ps9.jpg" alt="Projets locaux" class="w-100 h-100 object-fit-cover" loading="lazy">
+            </div>
           </div>
         </div>
-        <div class="col-6 col-md-4 fade-in-left">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/psd.jpg" alt="Soutien communautaire" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Soutien communautaire</p></div>
+        <div class="col-6 col-md-3">
+          <div class="content-card reveal reveal-delay-4">
+            <div class="ratio ratio-4x3 rounded overflow-hidden">
+              <img src="./images/psf.jpg" alt="Communauté" class="w-100 h-100 object-fit-cover" loading="lazy">
+            </div>
           </div>
         </div>
-        <div class="col-6 col-md-4 fade-in">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/Ps9.jpg" alt="Projets locaux" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Projets locaux</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 fade-in-right">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/pse.jpg" alt="Impact durable" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Impact durable</p></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modern-section-note fade-in">
-        Des services dédiés pour accompagner la communauté vers l'autonomie.
       </div>
     </div>
   </section>
 
-  <!-- AGENCE -->
-  <section id="agence" class="modern-section decorated-section" aria-label="Agence payeur">
-    <div class="section-shapes">
-      <div class="section-shape section-shape-1"></div>
-      <div class="section-shape section-shape-2"></div>
-      <div class="section-shape section-shape-3"></div>
+  <section id="contact-preview" class="contact-band" aria-label="Contact">
+    <div class="container text-center">
+      <h2 class="contact-title reveal">Contactez-nous</h2>
+      <p class="reveal mb-2">Esokaka Fort Dauphin / Bevalala Andoharanofotsy</p>
+      <p class="reveal mb-2"><strong>034 84 70 940</strong> · <strong>032 99 38 341</strong></p>
+      <p class="reveal mb-0">
+        <a href="mailto:Association.Fanambina@gmail.com">association.fanambina@gmail.com</a>
+      </p>
+      <a href="contact.html" class="btn-hero mt-4">Page contact</a>
     </div>
-    
+  </section>
+
+  <footer class="footer-fanambina">
     <div class="container">
-      <h3 class="section-title fade-in">Agence payeur</h3>
-      <div class="row g-4">
-        <div class="col-6 col-md-4 fade-in-left">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/ap.jpg" alt="Paiements transparents" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Paiements transparents</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 fade-in">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/apa.jpg" alt="Gestion fiable" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Gestion fiable</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 fade-in-right">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/apb.jpg" alt="Suivi des bénéficiaires" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Suivi des bénéficiaires</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 fade-in-left">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/apc.jpg" alt="Transparence et confiance" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Transparence & confiance</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 fade-in">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/apd.jpg" alt="Soutien aux partenaires" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Soutien aux partenaires</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 fade-in-right">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/cj.jpg" alt="Engagement continu" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Engagement continu</p></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modern-section-note fade-in">
-        Un soutien fiable pour les bénéficiaires et partenaires.
-      </div>
+      <p class="mb-0">&copy; Association Fanambina. Agir juste, cibler mieux — Servir vrai à l'humanité.</p>
+      <p class="mb-0 mt-2"><a href="contact.html">Contact</a> · <a href="objectif.html">Objectif</a></p>
     </div>
-  </section>
+  </footer>
 
-  <!-- CIBLAGE -->
-  <section id="ciblage" class="modern-section decorated-section alt-bg" aria-label="Ciblage">
-    <div class="section-shapes">
-      <div class="section-shape section-shape-1"></div>
-      <div class="section-shape section-shape-2"></div>
-      <div class="section-shape section-shape-3"></div>
-    </div>
-    
-    <div class="container">
-      <h3 class="section-title fade-in">Ciblage</h3>
-      <div class="row g-4">
-        <div class="col-6 col-md-4 fade-in-left">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/ca.jpg" alt="Ciblage précis" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Ciblage précis</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 fade-in">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/cb.jpg" alt="Identification des besoins" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Identification des besoins</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 fade-in-right">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/cc.jpg" alt="Sélection équitable" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Sélection équitable</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 fade-in-left">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/cd.jpg" alt="Accompagnement ciblé" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Accompagnement ciblé</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 fade-in">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/ce.jpg" alt="Suivi personnalisé" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Suivi personnalisé</p></div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 fade-in-right">
-          <div class="modern-card">
-            <div class="media-wrap"><img src="./images/cf.jpg" alt="Impact mesurable" loading="lazy"></div>
-            <div class="modern-card-body"><p class="modern-caption">Impact mesurable</p></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modern-section-note fade-in">
-        Identifier, sélectionner et accompagner les plus vulnérables.
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="modern-contact" aria-label="Contact">
-    <div class="container">
-      <div class="contact-content">
-        <h4 class="contact-title text-center fade-in">Contactez-nous</h4>
-        <div class="contact-info text-center fade-in">
-          <p class="mb-3">Esokaka Fort Dauphin / Bevalala Andoharanofotsy</p>
-          <p class="mb-3">📞 <strong>0348470940/0329938341</strong></p>
-          <p class="mb-3">📧 <a href="mailto:Association.Fanambina@gmail.com">association.fanambina@gmail.com</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bootstrap JS -->
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
-  <!-- IntersectionObserver pour fade-in -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      // Observer pour les animations fade-in
-      const targets = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
-      const obs = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if(entry.isIntersecting){
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target);
-          }
+    (function() {
+      var backToTop = document.getElementById('backToTop');
+      if (backToTop) {
+        window.addEventListener('scroll', function() {
+          backToTop.classList.toggle('visible', window.scrollY > 400);
         });
-      }, { threshold: 0.25 });
-      targets.forEach(t => obs.observe(t));
-
-      // Gestion des erreurs d'images
-      const images = document.querySelectorAll('img');
-      images.forEach(img => {
-        img.onerror = function() {
-          // Image de fallback en cas d'erreur
-          this.src = 'https://via.placeholder.com/400x300/4CAF50/ffffff?text=Image+Non+Disponible';
-          this.alt = 'Image non disponible';
-        };
-      });
-
-      // Bouton retour en haut
-      const backToTop = document.getElementById('backToTop');
-      window.addEventListener('scroll', function() {
-        if(window.scrollY > 300) {
-          backToTop.style.display = 'block';
-        } else {
-          backToTop.style.display = 'none';
-        }
-      });
-      backToTop.addEventListener('click', function() {
-        window.scrollTo({top:0, behavior:'smooth'});
-      });
-
-      // Dark mode toggle
-      const darkModeToggle = document.getElementById('darkModeToggle');
-      function setDarkMode(on) {
-        if(on) {
-          document.body.classList.add('dark-mode');
-          localStorage.setItem('darkMode', '1');
-          darkModeToggle.innerText = '☀️';
-        } else {
-          document.body.classList.remove('dark-mode');
-          localStorage.setItem('darkMode', '0');
-          darkModeToggle.innerText = '🌙';
-        }
+        backToTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
       }
-      // Initial state
-      setDarkMode(localStorage.getItem('darkMode') === '1');
-      darkModeToggle.addEventListener('click', function() {
-        setDarkMode(!document.body.classList.contains('dark-mode'));
-      });
-    });
+      var darkToggle = document.getElementById('darkModeToggle');
+      if (darkToggle) {
+        if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
+        darkToggle.addEventListener('click', function() {
+          document.body.classList.toggle('dark-mode');
+          localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        });
+      }
+      var navbar = document.querySelector('.navbar-fanambina');
+      if (navbar) {
+        window.addEventListener('scroll', function() { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+        if (window.scrollY > 50) navbar.classList.add('scrolled');
+      }
+      var reveals = document.querySelectorAll('.reveal');
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('revealed'); }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function(el) { observer.observe(el); });
+    })();
   </script>
 </body>
 </html>
