@@ -36,7 +36,7 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
   color: #333;
   line-height: 1.65;
   overflow-x: hidden;
@@ -251,10 +251,10 @@ body {
 }
 
 .hero-fanambina .hero-logo {
-  width: 140px;
+  width: 200px;
   height: auto;
-  margin-bottom: 1.5rem;
-  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.2));
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 20px rgba(0,0,0,0.35));
 }
 
 .hero-fanambina .hero-title {
@@ -262,7 +262,7 @@ body {
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.15;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4), 0 4px 24px rgba(0,0,0,0.25);
   letter-spacing: -0.02em;
 }
 
@@ -270,10 +270,33 @@ body {
   font-size: clamp(1rem, 2.2vw, 1.35rem);
   font-weight: 500;
   opacity: 0.95;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.35), 0 2px 16px rgba(0,0,0,0.2);
+}
+
+.hero-fanambina .hero-badges {
+  margin-bottom: 1.5rem;
+}
+
+.hero-fanambina .hero-badge {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.18);
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(6px);
+  transition: var(--transition);
+}
+
+.hero-fanambina .hero-badge:hover {
+  background: rgba(255,255,255,0.28);
+  border-color: rgba(255,255,255,0.5);
 }
 
 .hero-fanambina .btn-hero {
@@ -290,6 +313,13 @@ body {
   border: 2px solid white;
   text-decoration: none;
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.hero-fanambina .btn-hero-primary {
+  padding: 1rem 2.25rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.2);
 }
 
 .hero-fanambina .btn-hero:hover {
@@ -313,7 +343,7 @@ body {
 
 /* ----- Sections communes ----- */
 .section-fanambina {
-  padding: 5rem 0;
+  padding: 6rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -336,8 +366,27 @@ body {
   font-size: clamp(1.75rem, 4vw, 2.75rem);
   font-weight: 800;
   color: var(--dark);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.section-fanambina .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  border-radius: 2px;
+}
+
+.section-fanambina .section-title.text-center::after {
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .section-fanambina .section-subtitle {
@@ -445,11 +494,14 @@ body {
   font-size: 0.95rem;
   text-decoration: none;
   transition: var(--transition);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
 }
 
 .pillar-card .pillar-link:hover {
   color: var(--primary-dark);
   gap: 0.6rem;
+  border-bottom-color: var(--primary);
 }
 
 /* ----- Bloc Objectif / Mission ----- */
@@ -490,11 +542,74 @@ body {
   color: white;
 }
 
+.objectif-block .section-title::after {
+  background: rgba(255,255,255,0.85);
+}
+
 .objectif-block p {
   font-size: 1.1rem;
   opacity: 0.95;
   max-width: 720px;
   margin: 0 auto;
+}
+
+/* ----- Zones d'intervention / Expérience ----- */
+.experience-since {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.experience-since-inline {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.zones-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.zone-badge {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: rgba(42, 143, 58, 0.1);
+  border: 1px solid rgba(42, 143, 58, 0.25);
+  border-radius: 50px;
+  transition: var(--transition);
+}
+
+.zone-badge:hover {
+  background: rgba(42, 143, 58, 0.18);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.zones-block {
+  padding: 1.25rem 1.5rem;
+  background: var(--secondary);
+  border-radius: var(--card-radius-sm);
+  border-left: 4px solid var(--primary);
+}
+
+body.dark-mode .zone-badge {
+  color: var(--primary-light);
+  background: rgba(76, 175, 80, 0.15);
+  border-color: rgba(76, 175, 80, 0.3);
+}
+
+body.dark-mode .zones-block {
+  background: #2a2a2a;
 }
 
 /* ----- Contact band ----- */
@@ -521,6 +636,20 @@ body {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
   margin-bottom: 1.5rem;
+}
+
+.contact-band .contact-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.contact-band .contact-icon {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  flex-shrink: 0;
 }
 
 .contact-band a {

@@ -18,6 +18,8 @@
     .contact-card { background: #fff; border-radius: var(--card-radius); padding: 2rem; box-shadow: var(--card-shadow); height: 100%; transition: var(--transition); border: 1px solid rgba(0,0,0,0.06); }
     .contact-card:hover { box-shadow: var(--card-shadow-hover); }
     .contact-card .contact-icon { width: 56px; height: 56px; border-radius: 12px; background: linear-gradient(135deg, rgba(26, 95, 42, 0.12) 0%, rgba(76, 175, 80, 0.12) 100%); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem; }
+    .contact-address { color: #444 !important; line-height: 1.6; }
+    body.dark-mode .contact-address { color: #d0d0d0 !important; }
     .contact-form-card { background: #fff; border-radius: var(--card-radius); padding: 2rem; box-shadow: var(--card-shadow); border: 1px solid rgba(0,0,0,0.06); }
     body.dark-mode .contact-card, body.dark-mode .contact-form-card { background: #252525; border-color: #333; }
   </style>
@@ -59,13 +61,13 @@
   </header>
 
   <section class="section-fanambina" aria-label="Coordonnées">
-    <div class="container">
+    
       <div class="row g-4 mb-5">
         <div class="col-md-4">
           <div class="contact-card reveal text-center">
             <div class="contact-icon mx-auto"><i class="fas fa-map-marker-alt"></i></div>
             <h3 class="h5 mb-2">Adresses</h3>
-            <p class="mb-0 text-muted">Esokaka Fort Dauphin<br>Bevalala Andoharanofotsy</p>
+            <p class="mb-0 contact-address">Esokaka Fort Dauphin<br>Bevalala Andoharanofotsy</p>
           </div>
         </div>
         <div class="col-md-4">
