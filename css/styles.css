@@ -682,6 +682,24 @@ body.dark-mode .zones-block {
   text-decoration: underline;
 }
 
+.btn-about {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(42, 143, 58, 0.2);
+  color: var(--accent) !important;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+.btn-about:hover {
+  background: var(--accent);
+  color: white !important;
+  border-color: var(--accent);
+}
+
 /* ----- Boutons flottants ----- */
 .btn-back-top {
   position: fixed;
@@ -805,6 +823,8 @@ body.dark-mode .btn-dark-mode .fa-sun { display: inline-block !important; }
   border: 1px solid rgba(0,0,0,0.06);
   transition: var(--transition);
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .content-card:hover {
@@ -869,6 +889,46 @@ body.dark-mode .section-subtitle {
 
 body.dark-mode .pillar-card:hover {
   border-color: rgba(76, 175, 80, 0.3);
+}
+
+/* ----- Page À propos : sections d'information ----- */
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-item {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(42, 143, 58, 0.1);
+  gap: 0.5rem;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--primary);
+  min-width: 200px;
+  flex-shrink: 0;
+}
+
+.info-value {
+  color: #555;
+  flex: 1;
+  min-width: 200px;
+}
+
+body.dark-mode .info-item {
+  border-bottom-color: rgba(76, 175, 80, 0.2);
+}
+
+body.dark-mode .info-value {
+  color: #b0b0b0;
 }
 
 /* ----- Utilitaires ----- */
