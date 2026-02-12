@@ -822,7 +822,7 @@ body.dark-mode .btn-dark-mode .fa-sun { display: inline-block !important; }
   box-shadow: var(--card-shadow);
   border: 1px solid rgba(0,0,0,0.06);
   transition: var(--transition);
-  height: 65%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -934,6 +934,33 @@ body.dark-mode .info-value {
 /* ----- Utilitaires ----- */
 .text-primary-fanambina { color: var(--primary) !important; }
 .bg-light-fanambina { background: var(--secondary) !important; }
+
+/* ----- Galerie d'images ----- */
+.gallery-card {
+  background: #fff;
+  border-radius: var(--card-radius);
+  padding: 0;
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: var(--transition);
+  height: 100%;
+  overflow: hidden;
+}
+
+.gallery-card:hover {
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(26, 95, 42, 0.12);
+  transform: translateY(-4px);
+}
+
+body.dark-mode .gallery-card {
+  background: #252525;
+  border-color: #333;
+}
+
+body.dark-mode .gallery-card:hover {
+  border-color: rgba(76, 175, 80, 0.3);
+}
 
 /* ----- Images ----- */
 .object-fit-cover { object-fit: cover; }
