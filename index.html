@@ -13,9 +13,11 @@
   <meta name="theme-color" content="#1a5f2a">
 
   <link rel="icon" type="image/png" href="./images/Logo.png">
+  <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="./images/ca.jpg">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -45,7 +47,7 @@
           <li class="nav-item"><a class="nav-link" href="agence.html">Agence payeur</a></li>
           <li class="nav-item"><a class="nav-link" href="ciblage.html">Ciblage</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Prestataire de service</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-cta" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -132,6 +134,44 @@
               </p>
               <a href="services.html" class="pillar-link">En savoir plus <i class="fas fa-arrow-right"></i></a>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section impact / chiffres clés -->
+  <section class="section-fanambina impact-section" aria-label="Fanambina en chiffres">
+    <div class="container">
+      <p class="section-label text-center reveal">Notre impact</p>
+      <h2 class="section-title text-center reveal">Fanambina en chiffres</h2>
+      <div class="row g-4 mt-1">
+        <div class="col-6 col-md-3">
+          <div class="stat-card reveal">
+            <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+            <span class="stat-number">2017</span>
+            <span class="stat-label">Année de fondation</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card reveal reveal-delay-1">
+            <div class="stat-icon"><i class="fas fa-map-marked-alt"></i></div>
+            <span class="stat-number" data-count="9" data-suffix="+">9+</span>
+            <span class="stat-label">Régions d'intervention</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card reveal reveal-delay-2">
+            <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+            <span class="stat-number" data-count="3">3</span>
+            <span class="stat-label">Piliers d'action</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-card reveal reveal-delay-3">
+            <div class="stat-icon"><i class="fas fa-award"></i></div>
+            <span class="stat-number" data-count="7" data-suffix="+">7+</span>
+            <span class="stat-label">Années d'expérience</span>
           </div>
         </div>
       </div>
@@ -289,36 +329,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    (function() {
-      var backToTop = document.getElementById('backToTop');
-      if (backToTop) {
-        window.addEventListener('scroll', function() {
-          backToTop.classList.toggle('visible', window.scrollY > 400);
-        });
-        backToTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
-      }
-      var darkToggle = document.getElementById('darkModeToggle');
-      if (darkToggle) {
-        if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
-        darkToggle.addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode');
-          localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
-        });
-      }
-      var navbar = document.querySelector('.navbar-fanambina');
-      if (navbar) {
-        window.addEventListener('scroll', function() { navbar.classList.toggle('scrolled', window.scrollY > 50); });
-        if (window.scrollY > 50) navbar.classList.add('scrolled');
-      }
-      var reveals = document.querySelectorAll('.reveal');
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          if (e.isIntersecting) { e.target.classList.add('revealed'); }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-      reveals.forEach(function(el) { observer.observe(el); });
-    })();
-  </script>
 </body>
 </html>

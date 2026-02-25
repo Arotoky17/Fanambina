@@ -27,10 +27,19 @@
     var darkToggle = document.getElementById('darkModeToggle') || document.querySelector('.btn-dark-mode');
     if (darkToggle && !darkToggle.dataset.inited) {
       darkToggle.dataset.inited = '1';
-      if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-mode');
+      function updateDarkModeBtn(isDark) {
+        var label = isDark ? 'Désactiver le mode sombre' : 'Activer le mode sombre';
+        darkToggle.setAttribute('aria-label', label);
+        darkToggle.setAttribute('title', label);
+      }
+      var initDark = localStorage.getItem('theme') === 'dark';
+      if (initDark) document.body.classList.add('dark-mode');
+      updateDarkModeBtn(initDark);
       darkToggle.addEventListener('click', function() {
         document.body.classList.toggle('dark-mode');
-        localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        var isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateDarkModeBtn(isDark);
       });
     }
 
@@ -53,15 +62,42 @@
       reveals.forEach(function(el) { observer.observe(el); });
     }
 
-    // Fermer menu mobile au clic sur un lien
+    // Fermer menu mobile au clic sur un lien (y compris les ancres)
     document.querySelectorAll('.navbar .nav-link').forEach(function(link) {
       link.addEventListener('click', function() {
         var collapse = document.querySelector('.navbar-collapse.show');
         if (collapse && window.bootstrap && window.bootstrap.Collapse) {
-          var c = bootstrap.Collapse.getInstance(collapse);
+          var c = bootstrap.Collapse.getOrCreateInstance(collapse);
           if (c) c.hide();
         }
       });
     });
+
+    // Animation compteur pour les stat-number
+    var statNumbers = document.querySelectorAll('.stat-number[data-count]');
+    if (statNumbers.length) {
+      var statObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !entry.target.dataset.animated) {
+            entry.target.dataset.animated = '1';
+            var target = parseInt(entry.target.getAttribute('data-count'));
+            var suffix = entry.target.getAttribute('data-suffix') || '';
+            var duration = 1400;
+            var startTime = null;
+            function step(timestamp) {
+              if (!startTime) startTime = timestamp;
+              var progress = Math.min((timestamp - startTime) / duration, 1);
+              var ease = 1 - Math.pow(1 - progress, 3);
+              var current = Math.floor(ease * target);
+              entry.target.textContent = current + suffix;
+              if (progress < 1) requestAnimationFrame(step);
+              else entry.target.textContent = target + suffix;
+            }
+            requestAnimationFrame(step);
+          }
+        });
+      }, { threshold: 0.6 });
+      statNumbers.forEach(function(el) { statObserver.observe(el); });
+    }
   });
 })();

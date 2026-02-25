@@ -7,9 +7,15 @@
   <meta name="description" content="À propos de l'Association Fanambina : informations légales, responsable, hébergement et toutes les données officielles de l'association.">
   <meta name="keywords" content="à propos, Fanambina, association, Madagascar, informations légales">
   <meta property="og:title" content="À propos - Association Fanambina">
+  <meta property="og:description" content="Informations juridiques et administratives de l'Association Fanambina à Madagascar.">
+  <meta property="og:image" content="./images/Logo.png">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1a5f2a">
 
   <link rel="icon" type="image/png" href="images/Logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
@@ -36,7 +42,7 @@
           <li class="nav-item"><a class="nav-link" href="agence.html">Agence payeur</a></li>
           <li class="nav-item"><a class="nav-link" href="ciblage.html">Ciblage</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Prestataire de service</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-cta" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
@@ -123,8 +129,50 @@
             </div>
           </div>
 
+          <!-- Notre parcours — Timeline -->
+          <div class="apropos-card reveal">
+            <div class="apropos-header">
+              <div class="content-icon">
+                <i class="fas fa-history"></i>
+              </div>
+              <h2>Notre parcours</h2>
+            </div>
+            <div class="timeline">
+              <div class="timeline-item reveal">
+                <div class="timeline-dot"><i class="fas fa-flag"></i></div>
+                <div class="timeline-content">
+                  <p class="timeline-year">2017</p>
+                  <h4 class="timeline-title">Fondation à Fort Dauphin</h4>
+                  <p class="timeline-text">Création de l'Association Fanambina à Esokaka, Fort Dauphin — Région Anosy, Madagascar. Enregistrement officiel N°211 17/PREF/T.RO/ASS.</p>
+                </div>
+              </div>
+              <div class="timeline-item reveal reveal-delay-1">
+                <div class="timeline-dot"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="timeline-content">
+                  <p class="timeline-year">2018 – 2020</p>
+                  <h4 class="timeline-title">Premières missions régionales</h4>
+                  <p class="timeline-text">Interventions dans les régions Anosy et Androy. Premiers programmes de ciblage des bénéficiaires et actions d'agence payeur déployés sur le terrain.</p>
+                </div>
+              </div>
+              <div class="timeline-item reveal reveal-delay-2">
+                <div class="timeline-dot"><i class="fas fa-expand-arrows-alt"></i></div>
+                <div class="timeline-content">
+                  <p class="timeline-year">2021 – 2022</p>
+                  <h4 class="timeline-title">Expansion nationale</h4>
+                  <p class="timeline-text">Extension vers Bongolava, Betioky, Vakinakaratra, Itasy et Analamanga. Couverture de 6+ régions à travers Madagascar.</p>
+                </div>
+              </div>
+              <div class="timeline-item reveal reveal-delay-3">
+                <div class="timeline-dot"><i class="fas fa-star"></i></div>
+                <div class="timeline-content">
+                  <p class="timeline-year">2023 – 2026</p>
+                  <h4 class="timeline-title">9 régions couvertes</h4>
+                  <p class="timeline-text">Présence consolidée dans 9 régions à Madagascar. Renforcement des 3 piliers : agence payeur, ciblage et prestataire de service.</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-          
         </div>
       </div>
     </div>
@@ -172,12 +220,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    (function(){
-      var r = document.querySelectorAll('.reveal');
-      var o = new IntersectionObserver(function(e){ e.forEach(function(x){ if(x.isIntersecting) x.target.classList.add('revealed'); }); }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-      r.forEach(function(el){ o.observe(el); });
-    })();
-  </script>
 </body>
 </html>
